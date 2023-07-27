@@ -1,0 +1,578 @@
+/* Global styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a; /* Dark background for a futuristic look */
+  color: #e0e0e0; /* Light grey text color for better contrast */
+}
+
+/* Header styles */
+header {
+  background: linear-gradient(135deg, #00192d, #00081a); /* Dark blue gradient background */
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff; /* White text color for the title */
+}
+
+/* Course Containers */
+.course-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #00192d, #00081a); /* Dark blue gradient background */
+}
+
+.course-ribbon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 30px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #ff5c5c; /* Bright red color for the ribbon */
+  color: #fff; /* White text color for the ribbon */
+  border-radius: 20px 0 0 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.course-info {
+  flex: 1;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for course info */
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-info h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff; /* White text color for the title */
+}
+
+.course-info p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ccc; /* Light grey text color for other info */
+}
+
+.course-image {
+  flex: 1;
+  margin-left: 40px;
+  position: relative;
+  z-index: 1; /* Bring the image forward to overlay holographic elements */
+}
+
+.course-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Course Details */
+.module-details {
+  display: none;
+  background-color: #00192d; /* Dark blue background for module details */
+  border-radius: 50px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6); /* Intense box shadow for a lifted effect */
+  padding: 60px;
+  margin-top: 80px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  position: relative; /* For positioning the holographic elements and animation */
+}
+
+.module-details:before {
+  /* Add a holographic 3D effect */
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, #37b6ff, #55aaff, #37b6ff); /* Light blue holographic color gradient */
+  border-radius: 50%;
+  opacity: 0.3;
+  transform: rotateZ(45deg);
+  pointer-events: none;
+  z-index: -1;
+  animation: rotateHologram 10s linear infinite; /* Rotate the hologram for an impressive animation */
+}
+
+.module-details:after {
+  /* Another holographic element for more depth */
+  content: '';
+  position: absolute;
+  top: 50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, #37b6ff, #55aaff, #37b6ff); /* Light blue holographic color gradient */
+  border-radius: 50%;
+  opacity: 0.3;
+  transform: rotateZ(45deg);
+  pointer-events: none;
+  z-index: -1;
+  animation: rotateHologramReverse 15s linear infinite; /* Rotate the hologram in the opposite direction */
+}
+
+.module-details h2 {
+  font-size: 64px;
+  margin-bottom: 40px;
+  color: #fff; /* White text color for module titles */
+  font-family: 'Montserrat', sans-serif; /* Custom font for module titles */
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); /* Text shadow for a 3D effect */
+  animation: fadeInUp 1s ease-in-out; /* Fade-in animation for module titles */
+}
+
+.week-details {
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for week details */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+.week-details p {
+  color: #e0e0e0; /* Light grey text color for week descriptions */
+}
+
+.week-details ul {
+  list-style: none;
+}
+
+.week-details li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.week-details li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: #37b6ff; /* Light blue bullet point */
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+/* Interactive Module Cards */
+.module-card {
+  width: 30%;
+  margin-bottom: 30px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for module cards */
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+}
+
+.module-card button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #37b6ff; /* Light blue button color */
+  color: #fff; /* White text color for buttons */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Call-to-Action (CTA) Button */
+.course-cta {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  padding: 14px 40px;
+  background-color: #55aaff; /* Vibrant blue color for the CTA button */
+  color: #fff; /* White text color for the CTA button */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom animation for Module Details */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Hologram Animation */
+@keyframes rotateHologram {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotateHologramReverse {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
+
+/* Creative Design for Module Information */
+.module-details h2 {
+  position: relative;
+  margin-bottom: 40px;
+  color: #37b6ff; /* Light blue text color for module titles */
+}
+
+.module-details h2:before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 100px;
+  height: 3px;
+  background: #37b6ff; /* Light blue line under the module title */
+  transform: translateX(-50%);
+}
+
+.week-details {
+  background-color: rgba(0, 0, 0, 0.0); /* Semi-transparent white background for week details */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+.week-details p {
+  color: #e0e0e0; /* Light grey text color for week descriptions */
+}
+
+.week-details ul {
+  list-style: none;
+}
+
+.week-details li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.week-details li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: #37b6ff; /* Light blue bullet point */
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+/* Hover Effects */
+.module-details button,
+.course-cta {
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.module-details button:hover,
+.course-cta:hover {
+  background-color: #55aaff; /* Vibrant blue color on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly lift the button on hover */
+}
+
+/* Reset default margins and paddings */
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply basic styles to the section and article elements */
+section.course-buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+article.course-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Module Card */
+.module-card {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.module-card header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.module-card header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.module-description {
+  padding: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+/* Show module description when the header is clicked */
+.module-card.active .module-description {
+  max-height: 1000px; /* Use a large enough value to accommodate all content */
+}
+
+/* Style the week details */
+.module-description p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Style the first paragraph of each week with a different color */
+.module-description p:first-child {
+  font-weight: bold;
+  color: #0066cc;
+}
+
+/* Hover effect for the module cards */
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating animation for module headers */
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.module-card header:hover {
+  animation: floating 1.2s ease-in-out infinite;
+}
+
+/* Magical glow effect for module headers on active state */
+.module-card.active header {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  background-color: #4a4a4a;
+}
+
+/* Floating animation for module descriptions */
+.module-description p {
+  animation: floating 1.2s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.module-description p:nth-child(odd) {
+  animation-delay: 0.4s;
+}
+
+.module-description p:nth-child(even) {
+  animation-delay: 0.6s;
+}
+
+/* Active state for module headers */
+.module-card.active header {
+  background-color: #4a4a4a;
+  color: #fff;
+}
+
+/* Show module description when the header is clicked */
+.module-card.active .module-description {
+  max-height: 1000px; /* Use a large enough value to accommodate all content */
+}
+
+/* Hide the module descriptions by default */
+.module-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+/* Module headers */
+.module-card header {
+  cursor: pointer;
+  background-color: #f7f7f7; /* Add a light background color */
+  padding: 10px; /* Add padding for better readability */
+  border-top-left-radius: 10px; /* Add rounded corners for the top-left and top-right */
+  border-top-right-radius: 10px;
+}
+
+/* Style the arrow icon for active module headers */
+.module-card.active header::after {
+  content: '\25B2'; /* Unicode for the upwards arrow */
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* Style the arrow icon for inactive module headers */
+.module-card header::after {
+  content: '\25BC'; /* Unicode for the downwards arrow */
+  display: inline-block;
+  margin-left: 5px;
+}
+/* ... (previous CSS code remains the same) ... */
+
+/* Show module description when the header is clicked */
+.module-card.active .module-description {
+  max-height: 1000px;
+  max-width: 1170px;
+  padding: 20px; /* Adjust padding for better readability */
+  background-color: #f9f9f9; /* Add a light background color */
+  border-radius: 10px; /* Add rounded corners */
+}
+
+/* Hide the module descriptions by default */
+.module-description {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, max-width 0.3s ease-out; /* Add max-width transition */
+  color: #333; /* Set the text color for the descriptions */
+}
+
+/* ... (previous CSS code remains the same) ... */
+/* ... (previous CSS code remains the same) ... */
+
+/* Style the first paragraph of each week with a different color */
+.module-description p:first-child {
+  font-weight: bold;
+  color: #0066cc;
+}
+
+/* Change text color for specific weeks (2, 3, 4, 5, 7, 8, 9, 11, 12) to black */
+.module-description p:nth-child(4n + 2),
+.module-description p:nth-child(4n + 3),
+.module-description p:nth-child(4n + 4),
+.module-description p:nth-child(4n + 5),
+.module-description p:nth-child(4n + 7),
+.module-description p:nth-child(4n + 8),
+.module-description p:nth-child(4n + 9),
+.module-description p:nth-child(4n + 11),
+.module-description p:nth-child(4n + 12) {
+  color: #000;
+}
+
+/* ... (previous CSS code remains the same) ... */
+/* ... (previous CSS code remains the same) ... */
+
+/* Apply basic styles to the section and article elements */
+section.course-buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+article.course-buttons {
+  display: flex; /* Use flexbox to align the module cards in a row */
+  gap: 20px;
+}
+
+/* Module Card */
+.module-card {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.module-card header {
+  display: inline-block; /* Change the display to inline-block */
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.module-card header h2 {
+  margin: 0;
+  font-size: 4.0rem;
+}
+
+.module-description {
+  padding: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+/* ... (rest of the CSS code remains the same) ... */
+.module-cardfour header {
+  display: inline-block; /* Change the display to inline-block */
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+  cursor: pointer;
+}
+.module-cardfour header h2 {
+  margin: 0;
+  font-size: 8.0rem;
+}
+.module-cardfour {
+  
+  background-color: rgba(255, 255, 255, 0.2); /* Light gray with 20% transparency */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  border-radius: 10px; /* Rounded corners for a smoother look */
+  padding: 20px;
+  
+  overflow: hidden;
+}
+
+/* Show module description when the header is clicked */
+.module-cardfour.active .module-description {
+  max-height: 1000px;
+  max-width: 1170px;
+  padding: 20px; /* Adjust padding for better readability */
+  background-color: #f7f7f7; /* Add a light background color */
+  border-radius: 10px; /* Add rounded corners */
+}
