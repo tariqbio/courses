@@ -10,6 +10,7 @@ body {
   animation: backgroundGradient 20s linear infinite;
 }
 
+
 /* Course Containers */
 .course-container {
   max-width: 1200px;
@@ -23,6 +24,7 @@ body {
   background: linear-gradient(135deg, #00192d, #00081a);
 }
 
+
 /* Important */
 .course-info {
   flex: 1;
@@ -32,6 +34,7 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   margin-right: 40px; /* Add a gap between the image and text */
 }
+
 
 .course-info h1 {
   font-size: 36px;
@@ -64,6 +67,7 @@ body {
   object-position: center;
 }
 
+
 /* Animated Dots in Background */
 body::after {
   content: '';
@@ -87,6 +91,7 @@ body::after {
   margin-bottom: 40px;
 }
 
+
 .module-info {
   flex: 1;
   padding: 40px;
@@ -96,6 +101,7 @@ body::after {
   position: relative;
   z-index: 1;
 }
+
 
 .benefit-item li {
   font-size: 18px;
@@ -108,7 +114,9 @@ body::after {
   transition: transform 0.3s ease;
 }
 
-/* Benefit Item important */
+
+
+/* Benefit Item important*/
 .benefit-item {
   max-width: 1200px;
   margin: 20px auto;
@@ -126,12 +134,13 @@ body::after {
   animation: fadeInUp 1s ease;
 }
 
-/* Emoji important */
+/* Emoji important*/
 .emoji {
   font-size: 46px;
   margin-right: 20px;
   color: #fff;
 }
+
 
 .benefit-item li::after {
   content: "";
@@ -142,8 +151,9 @@ body::after {
   width: 4px;
   background-color: #37b6ff; /* Highlight color */
 }
-
 /*----------------------------------------------------------------------------- till now perfect---------- ------------------------------------------------------------------------*/
+
+
 
 @keyframes slideInLeft {
   0% {
@@ -187,6 +197,46 @@ body::after {
   }
 }
 
+@keyframes ribbonFlare {
+  0%, 100% {
+    transform: translateY(-50%) rotate(45deg) scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes backgroundGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes animatedCircles {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes animatedDots {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 @keyframes shimmer {
   0% {
     background-position: -1000px 0;
@@ -211,15 +261,5 @@ body::after {
   transform: translateY(-50%);
   color: #37b6ff; /* Color of the checkmark */
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 
 }
-/* Media Queries for Mobile Responsiveness */
-@media only screen and (max-width: 768px) {
-  .course-info {
-    background-color: rgba(255, 255, 255, 0.8); /* Add transparency to the background for mobile devices */
-  }
-
-  .course-image {
-    width: 100%;
-    height: auto;
-  }
